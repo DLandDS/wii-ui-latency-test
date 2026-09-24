@@ -69,8 +69,8 @@ Tampilan aplikasi memuat:
 
 - `FPS`: laju frame yang dihitung selama interval pengukuran terakhir.
 - `FRAMECOUNT`: jumlah frame yang sudah digambar sejak aplikasi mulai berjalan.
-- `TIMESTAMP`: waktu yang berlalu sejak aplikasi mulai berjalan, dalam
-  milidetik.
+- `TIMESTAMP`: waktu yang berlalu sejak aplikasi mulai berjalan, dalam format
+  `HH:MM:SS.mmm`.
 
 ## Batasan versi pertama
 

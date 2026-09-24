@@ -1,6 +1,31 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.14)
 project(wii-ui-latency-test LANGUAGES CXX)
 
-add_executable(wii-ui-latency-test source/main.cpp)
+include(FetchContent)
+
+FetchContent_Declare(
+   imgui
+   GIT_REPOSITORY https://github.com/ocornut/imgui.git
+   GIT_TAG 6d910d5487d11ca567b61c7824b0c78c569d62f0)
+FetchContent_Declare(
+   imgui_gx2
+   GIT_REPOSITORY https://github.com/Zenith-Team/imgui_gx2.git
+   GIT_TAG 5f8cc5dd50f20b22178fdefc8ac58a6e7b959b0d)
+FetchContent_MakeAvailable(imgui imgui_gx2)
+
+add_executable(wii-ui-latency-test
+   source/main.cpp
+   ${imgui_SOURCE_DIR}/imgui.cpp
+   ${imgui_SOURCE_DIR}/imgui_draw.cpp
+   ${imgui_SOURCE_DIR}/imgui_tables.cpp
+   ${imgui_SOURCE_DIR}/imgui_widgets.cpp
+   ${imgui_gx2_SOURCE_DIR}/imgui_impl_gx2.cpp
+   ${imgui_gx2_SOURCE_DIR}/imgui_impl_wiiu.cpp)
+
+target_include_directories(wii-ui-latency-test PRIVATE
+   ${imgui_SOURCE_DIR}/..
+   ${imgui_gx2_SOURCE_DIR})
+
+set_target_properties(wii-ui-latency-test PROPERTIES OUTPUT_NAME drc-latency-test)
 
 wut_create_rpx(wii-ui-latency-test)
