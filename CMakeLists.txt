@@ -11,7 +11,7 @@ FetchContent_Declare(
 FetchContent_Declare(
    imgui_gx2
    GIT_REPOSITORY https://github.com/Zenith-Team/imgui_gx2.git
-   GIT_TAG 5f8cc5dd50f20b22178fdefc8ac58a6e7b959b0d)
+   GIT_TAG cc0b51061074dd4cad2a79ca8a54eb770cfaa59a)
 FetchContent_MakeAvailable(imgui imgui_gx2)
 
 add_executable(wii-ui-latency-test
@@ -24,6 +24,7 @@ add_executable(wii-ui-latency-test
    ${imgui_gx2_SOURCE_DIR}/imgui_impl_wiiu.cpp)
 
 target_include_directories(wii-ui-latency-test PRIVATE
+   ${imgui_SOURCE_DIR}
    ${imgui_SOURCE_DIR}/..
    ${imgui_gx2_SOURCE_DIR})
 
