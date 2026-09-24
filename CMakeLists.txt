@@ -35,6 +35,8 @@ target_include_directories(wii-ui-latency-test PRIVATE
    ${imgui_SOURCE_DIR}
    ${imgui_SOURCE_DIR}/..
    ${imgui_gx2_INCLUDE_DIR})
+target_compile_definitions(wii-ui-latency-test PRIVATE
+   IMGUI_DISABLE_DEFAULT_SHELL_FUNCTIONS)
 
 set_target_properties(wii-ui-latency-test PROPERTIES OUTPUT_NAME drc-latency-test)
 
