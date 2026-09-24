@@ -6,7 +6,8 @@ include(FetchContent)
 FetchContent_Declare(
    imgui
    GIT_REPOSITORY https://github.com/ocornut/imgui.git
-   GIT_TAG 6d910d5487d11ca567b61c7824b0c78c569d62f0)
+   GIT_TAG 6d910d5487d11ca567b61c7824b0c78c569d62f0
+   SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/_deps/imgui)
 FetchContent_Declare(
    imgui_gx2
    GIT_REPOSITORY https://github.com/Zenith-Team/imgui_gx2.git
