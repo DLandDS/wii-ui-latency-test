@@ -3,10 +3,11 @@ project(wii-ui-latency-test LANGUAGES CXX)
 
 include(FetchContent)
 
+# imgui_gx2 accesses ImGui 1.91.0 internals, so keep these revisions paired.
 FetchContent_Declare(
    imgui
    GIT_REPOSITORY https://github.com/ocornut/imgui.git
-   GIT_TAG 6d910d5487d11ca567b61c7824b0c78c569d62f0
+   GIT_TAG 8199457a7d9e453f8d3d9cadc14683fb54a858b5
    SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/_deps/imgui)
 FetchContent_Declare(
    imgui_gx2
