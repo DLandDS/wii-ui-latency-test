@@ -1,7 +1,4 @@
-FROM ghcr.io/wiiu-env/devkitppc AS build
-
-RUN dkp-pacman -Syu --needed --noconfirm wut \
- && dkp-pacman -Scc --noconfirm
+FROM ghcr.io/wiiu-env/devkitppc:20260504@sha256:68785e7d75b070b0aea03272b61f36dd2fddfda4f442cdf0e27b168bd36a09fb AS build
 
 WORKDIR /work
 COPY . .
