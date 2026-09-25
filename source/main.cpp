@@ -73,6 +73,8 @@ main()
          framecount,
          OSTicksToMilliseconds(now - startTime),
       };
+      OSCalendarTime calendarTime;
+      OSTicksToCalendarTime(OSGetTime(), &calendarTime);
 
       const std::uint64_t milliseconds = snapshot.timestamp_ms % 1000;
       const std::uint64_t totalSeconds = snapshot.timestamp_ms / 1000;
