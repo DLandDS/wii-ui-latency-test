@@ -97,6 +97,14 @@ main()
          ImGuiWindowFlags_AlwaysAutoResize;
 
       ImGui::Begin("latency", nullptr, windowFlags);
+      ImGui::Text("Date: %04d-%02d-%02d %02d:%02d:%02d.%03d",
+                  calendarTime.tm_year,
+                  calendarTime.tm_mon + 1,
+                  calendarTime.tm_mday,
+                  calendarTime.tm_hour,
+                  calendarTime.tm_min,
+                  calendarTime.tm_sec,
+                  calendarTime.tm_msec);
       ImGui::Text("fps: %.0f fps", snapshot.fps);
       ImGui::Text("frame count: %llu",
                   static_cast<unsigned long long>(snapshot.framecount));
