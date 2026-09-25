@@ -41,7 +41,17 @@ main()
          framecount,
          OSTicksToMilliseconds(now - startTime),
       };
+      OSCalendarTime calendarTime;
+      OSTicksToCalendarTime(OSGetTime(), &calendarTime);
 
+      WHBLogPrintf("Date: %04d-%02d-%02d %02d:%02d:%02d.%03d",
+                   calendarTime.tm_year,
+                   calendarTime.tm_mon + 1,
+                   calendarTime.tm_mday,
+                   calendarTime.tm_hour,
+                   calendarTime.tm_min,
+                   calendarTime.tm_sec,
+                   calendarTime.tm_msec);
       WHBLogPrintf("fps: %.2f | framecount: %llu | timestamp_ms: %llu",
                    snapshot.fps,
                    static_cast<unsigned long long>(snapshot.framecount),

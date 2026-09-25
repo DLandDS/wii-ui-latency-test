@@ -67,6 +67,7 @@ antara TV dan GamePad.
 
 Tampilan aplikasi memuat:
 
+- `Date`: tanggal dan waktu sistem Wii U, termasuk milidetik.
 - `FPS`: laju frame yang dihitung selama interval pengukuran terakhir.
 - `FRAMECOUNT`: jumlah frame yang sudah digambar sejak aplikasi mulai berjalan.
 - `TIMESTAMP`: waktu yang berlalu sejak aplikasi mulai berjalan, dalam
